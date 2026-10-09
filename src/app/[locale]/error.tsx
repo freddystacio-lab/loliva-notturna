@@ -1,0 +1,2 @@
+"use client";
+export default function LocaleError({reset}:{error:Error;reset:()=>void}){return <main className="grid min-h-[70vh] place-items-center bg-[var(--ivory)] p-6"><div className="max-w-md text-center"><p className="eyebrow text-[var(--gold)]">L’Oliva Notturna</p><h1 className="serif mt-4 text-4xl">Algo salió mal.</h1><p className="mt-4 text-black/55">No pudimos cargar esta página. Intenta nuevamente.</p><button onClick={reset} className="button-primary mt-6">Reintentar</button></div></main>;}

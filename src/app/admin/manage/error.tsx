@@ -1,0 +1,2 @@
+"use client";
+export default function AdminError({reset}:{error:Error;reset:()=>void}){return <main className="grid min-h-screen place-items-center bg-[#f3f1eb] p-6"><div className="max-w-md border border-red-900/20 bg-white p-8 text-center"><h1 className="serif text-3xl">No pudimos cargar el panel.</h1><p className="mt-3 text-sm leading-6 text-black/55">Comprueba la conexión y vuelve a intentarlo.</p><button onClick={reset} className="button-primary mt-6">Reintentar</button></div></main>;}

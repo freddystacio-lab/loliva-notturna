@@ -1,0 +1,10 @@
+{
+  "meta": {"title": "L'Oliva Notturna | Cucina italiana a Viña del Mar", "description": "Un'esperienza italiana contemporanea sul mare."},
+  "nav": {"home": "Home", "menu": "Menù", "story": "La nostra storia", "experiences": "Esperienze", "gallery": "Galleria", "contact": "Contatti", "reserve": "Prenota"},
+  "hero": {"eyebrow": "Viña del Mar · Cile", "title": "La notte italiana, servita sul mare.", "body": "Pasta fresca, vini di carattere e una tavola fatta per restare ancora un po'.", "reserve": "Prenota un tavolo", "menu": "Scopri il menù"},
+  "home": {"introEyebrow": "Cucina della sera", "introTitle": "Tradizione italiana dal ritmo contemporaneo.", "introBody": "A L’Oliva Notturna cuciniamo con prodotti di stagione, pasta fatta a mano e il ritmo lento di una cena memorabile.", "chefEyebrow": "La cucina", "chefTitle": "Un menù che segue le stagioni.", "chefBody": "La nostra proposta reinterpreta le ricette regionali italiane con ingredienti della costa centrale cilena.", "experienceEyebrow": "Dopo le sei", "experienceTitle": "Ogni sera ha il suo rituale.", "experienceBody": "Aperitivo, cena e conversazione convivono in una sala intima, tra luce calda e ritmi distesi."},
+  "menu": {"eyebrow": "Il menù", "title": "Fatto a mano, servito senza fretta.", "body": "Una selezione immaginaria creata per questa esperienza dimostrativa.", "download": "Scarica PDF", "unavailable": "Temporaneamente non disponibile", "legend": "Legenda", "vegetarian": "Vegetariano", "vegan": "Vegano", "glutenFree": "Senza glutine", "spicy": "Piccante"},
+  "reserve": {"eyebrow": "Prenotazioni", "title": "Il tuo tavolo ti aspetta.", "body": "Da martedì a domenica, dalle 18:00 a mezzanotte. Prenotazioni ogni 30 minuti.", "start": "Trova un tavolo", "whatsapp": "Prenota su WhatsApp"},
+  "footer": {"hours": "Da martedì a domenica · 18:00–00:00", "location": "Zona Avenida San Martín · Viña del Mar", "demo": "Progetto dimostrativo immaginario. Non è un vero ristorante."},
+  "language": {"label": "Lingua", "change": "Cambia lingua"}
+}

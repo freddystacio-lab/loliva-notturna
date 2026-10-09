@@ -1,0 +1,1 @@
+export default function Loading(){return <main className="grid min-h-screen place-items-center bg-[#f3f1eb]"><p role="status" className="text-sm tracking-wider uppercase text-black/50">Cargando administración…</p></main>;}

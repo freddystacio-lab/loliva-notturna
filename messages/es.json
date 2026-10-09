@@ -1,0 +1,10 @@
+{
+  "meta": {"title": "L'Oliva Notturna | Cocina italiana en Viña del Mar", "description": "Una experiencia italiana contemporánea junto al mar."},
+  "nav": {"home": "Inicio", "menu": "Carta", "story": "Historia", "experiences": "Experiencias", "gallery": "Galería", "contact": "Contacto", "reserve": "Reservar"},
+  "hero": {"eyebrow": "Viña del Mar · Chile", "title": "La noche italiana, servida junto al mar.", "body": "Pasta fresca, vinos con carácter y una mesa preparada para quedarse un poco más.", "reserve": "Reservar una mesa", "menu": "Descubrir la carta"},
+  "home": {"introEyebrow": "Cucina della sera", "introTitle": "Tradición italiana con pulso contemporáneo.", "introBody": "En L’Oliva Notturna cocinamos con productos de estación, pastas hechas a mano y el ritmo pausado de una cena memorable.", "chefEyebrow": "La cocina", "chefTitle": "Una carta que sigue las estaciones.", "chefBody": "Nuestra propuesta reinterpreta recetas regionales italianas con ingredientes del litoral central chileno.", "experienceEyebrow": "Después de las seis", "experienceTitle": "Cada noche tiene su propio ritual.", "experienceBody": "Aperitivo, cena y sobremesa conviven en un salón íntimo de luz cálida y conversación tranquila."},
+  "menu": {"eyebrow": "La carta", "title": "Hecho a mano, servido sin prisa.", "body": "Una selección ficticia creada para esta experiencia de demostración.", "download": "Descargar PDF", "unavailable": "Temporalmente no disponible", "legend": "Leyenda", "vegetarian": "Vegetariano", "vegan": "Vegano", "glutenFree": "Sin gluten", "spicy": "Picante"},
+  "reserve": {"eyebrow": "Reservas", "title": "Tu mesa te espera.", "body": "Martes a domingo, de 18:00 a 00:00. Reservas cada 30 minutos.", "start": "Buscar disponibilidad", "whatsapp": "Reservar por WhatsApp"},
+  "footer": {"hours": "Martes a domingo · 18:00–00:00", "location": "Sector Avenida San Martín · Viña del Mar", "demo": "Proyecto ficticio de demostración. No corresponde a un restaurante real."},
+  "language": {"label": "Idioma", "change": "Cambiar idioma"}
+}

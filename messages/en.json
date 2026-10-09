@@ -1,0 +1,10 @@
+{
+  "meta": {"title": "L'Oliva Notturna | Italian dining in Viña del Mar", "description": "A contemporary Italian experience by the sea."},
+  "nav": {"home": "Home", "menu": "Menu", "story": "Our story", "experiences": "Experiences", "gallery": "Gallery", "contact": "Contact", "reserve": "Book"},
+  "hero": {"eyebrow": "Viña del Mar · Chile", "title": "The Italian night, served by the sea.", "body": "Fresh pasta, characterful wines and a table made for lingering.", "reserve": "Book a table", "menu": "Explore the menu"},
+  "home": {"introEyebrow": "Cucina della sera", "introTitle": "Italian tradition with a contemporary pulse.", "introBody": "At L’Oliva Notturna we cook with seasonal produce, handmade pasta and the unhurried rhythm of a memorable dinner.", "chefEyebrow": "The kitchen", "chefTitle": "A menu guided by the seasons.", "chefBody": "Our menu reimagines regional Italian recipes through ingredients from Chile’s central coast.", "experienceEyebrow": "After six", "experienceTitle": "Every evening has its own ritual.", "experienceBody": "Aperitivo, dinner and conversation share an intimate room shaped by warm light and an easy pace."},
+  "menu": {"eyebrow": "The menu", "title": "Handmade, served unhurriedly.", "body": "A fictional selection created for this demonstration experience.", "download": "Download PDF", "unavailable": "Temporarily unavailable", "legend": "Legend", "vegetarian": "Vegetarian", "vegan": "Vegan", "glutenFree": "Gluten-free", "spicy": "Spicy"},
+  "reserve": {"eyebrow": "Reservations", "title": "Your table is waiting.", "body": "Tuesday to Sunday, 6 pm to midnight. Reservations every 30 minutes.", "start": "Find a table", "whatsapp": "Book via WhatsApp"},
+  "footer": {"hours": "Tuesday to Sunday · 6 pm–midnight", "location": "Avenida San Martín area · Viña del Mar", "demo": "Fictional demonstration project. This is not a real restaurant."},
+  "language": {"label": "Language", "change": "Change language"}
+}
