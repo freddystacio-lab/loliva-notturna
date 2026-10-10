@@ -65,7 +65,7 @@ on conflict (name) do nothing;
 
 create table public.reservations (
   id uuid primary key default gen_random_uuid(),
-  public_code text unique not null default upper(substr(encode(gen_random_bytes(6), 'hex'), 1, 8)),
+  public_code text unique not null default upper(substr(encode(extensions.gen_random_bytes(6), 'hex'), 1, 8)),
   status public.reservation_status not null default 'confirmed',
   guest_name text not null,
   guest_email text not null,
