@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="L'Oliva Notturna">
+  <rect width="64" height="64" rx="12" fill="#1d2a21"/>
+  <path d="M19 45V18h7v21h18v6H19Z" fill="#f4efe5"/>
+  <path d="M39 13c8 1 12 6 12 14-8-1-12-6-12-14Z" fill="#b5965a"/>
+  <path d="M40 26c-3 3-5 7-6 12" fill="none" stroke="#b5965a" stroke-linecap="round" stroke-width="3"/>
+</svg>

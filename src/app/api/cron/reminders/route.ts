@@ -19,6 +19,5 @@ export async function GET(request: Request) {
       if (result.sent) { await supabase.from("reservations").update({[window.column]:new Date().toISOString()}).eq("id",reservation.id); sent++; }
     }
   }
-  await supabase.rpc("purge_expired_personal_data");
   return NextResponse.json({sent});
 }
