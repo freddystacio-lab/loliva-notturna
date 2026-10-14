@@ -39,6 +39,76 @@ export async function saveHeroDraft(formData: FormData) {
   if (error) throw new Error(error.message); revalidatePath("/admin/manage"); redirect(`/admin/manage?status=saved&locale=${locale}`);
 }
 
+export async function updateReservationStatus(formData: FormData) {
+  const supabase = await createAuthServerClient();
+  if (!supabase) throw new Error("Supabase no configurado");
+  const {data: claims} = await supabase.auth.getClaims();
+  if (!claims?.claims) throw new Error("No autorizado");
+  const code = String(formData.get("code") ?? "").trim().toUpperCase();
+  const status = String(formData.get("status") ?? "").trim();
+  if (!/^[A-F0-9]{8}$/.test(code)) throw new Error("Código de reserva inválido");
+  if (!["confirmed", "completed", "no_show", "cancelled"].includes(status)) throw new Error("Estado inválido");
+  const {error} = await supabase.from("reservations").update({status, updated_at: new Date().toISOString()}).eq("public_code", code);
+  if (error) throw new Error(error.message);
+  revalidatePath("/admin/manage");
+  redirect(`/admin/manage?status=updated`);
+}
+
+export async function saveServiceException(formData: FormData) {
+  const supabase = await createAuthServerClient();
+  if (!supabase) throw new Error("Supabase no configurado");
+  const {data: claims} = await supabase.auth.getClaims();
+  if (!claims?.claims) throw new Error("No autorizado");
+  const date = String(formData.get("date") ?? "").trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error("Fecha inválida");
+  const isClosed = formData.get("isClosed") === "on";
+  const opensAt = String(formData.get("opensAt") ?? "").trim();
+  const closesAt = String(formData.get("closesAt") ?? "").trim();
+  const reason = String(formData.get("reason") ?? "").trim().slice(0, 120);
+  if (!isClosed && (!/^\d{2}:\d{2}$/.test(opensAt) || !/^\d{2}:\d{2}$/.test(closesAt))) {
+    throw new Error("Indica apertura y cierre o marca la fecha como cerrada");
+  }
+  const {error} = await supabase.from("service_exceptions").upsert({
+    exception_date: date,
+    is_closed: isClosed,
+    opens_at: isClosed ? null : opensAt,
+    closes_at: isClosed ? null : closesAt,
+    reason,
+    updated_at: new Date().toISOString(),
+  }, {onConflict: "exception_date"});
+  if (error) throw new Error(error.message);
+  revalidatePath("/admin/manage");
+  redirect("/admin/manage?status=exceptions_updated");
+}
+
+export async function updateWaitlistStatus(formData: FormData) {
+  const supabase = await createAuthServerClient();
+  if (!supabase) throw new Error("Supabase no configurado");
+  const {data: claims} = await supabase.auth.getClaims();
+  if (!claims?.claims) throw new Error("No autorizado");
+  const id = String(formData.get("id") ?? "").trim();
+  const status = String(formData.get("status") ?? "").trim();
+  if (!/^[0-9a-f-]{36}$/i.test(id)) throw new Error("ID inválido");
+  if (!["pending", "contacted", "closed"].includes(status)) throw new Error("Estado inválido");
+  const {error} = await supabase.from("reservation_waitlist").update({status, updated_at: new Date().toISOString()}).eq("id", id);
+  if (error) throw new Error(error.message);
+  revalidatePath("/admin/manage");
+  redirect("/admin/manage?status=waitlist_updated");
+}
+
+export async function deleteServiceException(formData: FormData) {
+  const supabase = await createAuthServerClient();
+  if (!supabase) throw new Error("Supabase no configurado");
+  const {data: claims} = await supabase.auth.getClaims();
+  if (!claims?.claims) throw new Error("No autorizado");
+  const date = String(formData.get("date") ?? "").trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error("Fecha inválida");
+  const {error} = await supabase.from("service_exceptions").delete().eq("exception_date", date);
+  if (error) throw new Error(error.message);
+  revalidatePath("/admin/manage");
+  redirect("/admin/manage?status=exceptions_updated");
+}
+
 export async function publishHero(formData: FormData) {
   const supabase = await createAuthServerClient(); if (!supabase) throw new Error("Supabase no configurado");
   const {data: claims} = await supabase.auth.getClaims(); if (!claims?.claims) throw new Error("No autorizado");

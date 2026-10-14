@@ -16,6 +16,7 @@ export function ReservationForm({locale}: {locale: string}) {
     const response = await fetch("/api/reservations", {method: "POST", headers: {"content-type": "application/json"}, body: JSON.stringify({...values, people, privacyAccepted: values.privacyAccepted === "on"})});
     const result = await response.json();
     if (response.ok) { setStatus("success"); setMessage(`Reserva confirmada · ${result.code}`); event.currentTarget.reset(); }
+    else if (result.error === "waitlisted") { setStatus("error"); setMessage("No hay disponibilidad para esa franja. Te anotamos en la lista de espera y el restaurante te contactará."); }
     else { setStatus("error"); setMessage(result.error === "service_not_configured" ? "El servicio de reservas estará disponible al conectar Supabase." : "No fue posible confirmar la reserva. Intenta otra franja."); }
   }
   return <form className="grid gap-5" onSubmit={submit}>

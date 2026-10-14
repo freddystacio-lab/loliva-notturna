@@ -26,7 +26,19 @@ export async function POST(request: Request) {
     p_manage_token_hash: tokenHash,
   });
 
-  if (error?.message.includes("no_availability")) return NextResponse.json({error: "no_availability"}, {status: 409});
+  if (error?.message.includes("no_availability")) {
+    await supabase.from("reservation_waitlist").insert({
+      guest_name: parsed.data.name,
+      guest_email: parsed.data.email,
+      guest_phone: parsed.data.phone,
+      party_size: parsed.data.people,
+      preferred_date: parsed.data.date,
+      preferred_time: parsed.data.time,
+      locale: parsed.data.locale,
+      notes: parsed.data.notes ?? null,
+    });
+    return NextResponse.json({error: "waitlisted"}, {status: 409});
+  }
   if (error?.message.includes("outside_service_hours")) return NextResponse.json({error: "outside_service_hours"}, {status: 422});
   if (error || !data?.[0]) return NextResponse.json({error: "reservation_failed"}, {status: 500});
 

@@ -6,7 +6,7 @@ import {updateAdminSession} from "./lib/supabase/auth-proxy";
 const intlProxy = createMiddleware(routing);
 
 export default async function proxy(request: NextRequest) {
-  if (request.nextUrl.pathname === "/") return NextResponse.next();
+  if (request.nextUrl.pathname === "/" || request.nextUrl.pathname === "/sitemap.xml" || request.nextUrl.pathname === "/robots.txt") return NextResponse.next();
   if (request.nextUrl.pathname.startsWith("/admin/manage")) return updateAdminSession(request);
   return intlProxy(request);
 }
